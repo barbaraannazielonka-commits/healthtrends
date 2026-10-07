@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hype Check: 30 health trends from your feed</title>
+<meta name="description" content="30 health trends from social media, checked against sources from 2024 to 2026. Includes a pitfalls page and a full sources page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --paper:#F3F5FC; --surface:#FFFFFF; --ink:#11173A; --ink2:#454C75; --line:#D5DAEF;
+  --accent:#3347FF; --accent-ink:#FFFFFF; --focus:#3347FF;
+  --c-food:#E8691A; --c-mind:#6F4EF5; --c-move:#0E9A76; --c-look:#E03A78; --c-tech:#2564F0;
+  --solid-bg:#C9F3E3; --solid-fg:#07523B; --solid-bd:#0E9A76;
+  --mixed-bg:#FFEAA6; --mixed-fg:#5C4300; --mixed-bd:#C99700;
+  --weak-bg:#FFD9BC; --weak-fg:#6B2E00; --weak-bd:#D9701A;
+  --risky-bg:#FFC8D5; --risky-fg:#7A0827; --risky-bd:#D6264F;
+  --display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0E1230; --surface:#171C47; --ink:#EEF0FF; --ink2:#B4BAE8; --line:#2C3370;
+    --accent:#93A3FF; --accent-ink:#0E1230; --focus:#93A3FF;
+    --c-food:#FF9248; --c-mind:#A08BFF; --c-move:#2ED3A2; --c-look:#FF6B9F; --c-tech:#6C9BFF;
+    --solid-bg:#0F4A3A; --solid-fg:#C4F6E4; --solid-bd:#2ED3A2;
+    --mixed-bg:#4D3C00; --mixed-fg:#FFE79A; --mixed-bd:#F2C230;
+    --weak-bg:#5A2A08; --weak-fg:#FFD6B6; --weak-bd:#FF9A4D;
+    --risky-bg:#5E1226; --risky-fg:#FFCDD9; --risky-bd:#FF6B8E;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0E1230; --surface:#171C47; --ink:#EEF0FF; --ink2:#B4BAE8; --line:#2C3370;
+  --accent:#93A3FF; --accent-ink:#0E1230; --focus:#93A3FF;
+  --c-food:#FF9248; --c-mind:#A08BFF; --c-move:#2ED3A2; --c-look:#FF6B9F; --c-tech:#6C9BFF;
+  --solid-bg:#0F4A3A; --solid-fg:#C4F6E4; --solid-bd:#2ED3A2;
+  --mixed-bg:#4D3C00; --mixed-fg:#FFE79A; --mixed-bd:#F2C230;
+  --weak-bg:#5A2A08; --weak-fg:#FFD6B6; --weak-bd:#FF9A4D;
+  --risky-bg:#5E1226; --risky-fg:#FFCDD9; --risky-bd:#FF6B8E;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 80px);-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.125rem;line-height:1.6}
+a{color:var(--accent)}
+img,svg{max-width:100%}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:8px;background:var(--ink);color:var(--paper);padding:8px 14px;border-radius:6px;z-index:100}
+.skip:focus{left:12px}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--paper);border-bottom:2px solid var(--ink)}
+.top .wrap{display:flex;align-items:center;gap:18px;min-height:64px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.logo{font-family:var(--display);font-weight:800;font-size:1.45rem;letter-spacing:-.02em;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo-mark{display:inline-grid;place-items:center;width:34px;height:34px;border:2px solid var(--solid-bd);background:var(--solid-bg);color:var(--solid-fg);border-radius:8px;transform:rotate(-6deg)}
+nav{margin-left:auto;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+nav a.nl{font-family:var(--display);font-weight:700;font-size:1rem;text-decoration:none;color:var(--ink);padding:8px 14px;border-radius:999px;border:2px solid transparent}
+nav a.nl:hover{border-color:var(--line)}
+nav a.nl[aria-current="page"]{background:var(--ink);color:var(--paper)}
+.theme{font-family:var(--display);font-weight:700;font-size:.95rem;background:transparent;color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer}
+.theme:hover{border-color:var(--ink)}
+.theme[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* stamps */
+.stamp{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:800;font-size:.9rem;letter-spacing:.01em;line-height:1;padding:5px 11px 5px 8px;border-radius:6px;border:2px solid var(--vbd);background:var(--vbg);color:var(--vfg);transform:rotate(-2deg);white-space:nowrap}
+.stamp svg{width:16px;height:16px;flex:none}
+.stamp.big{font-size:1.15rem;padding:8px 16px 8px 12px;border-width:3px}
+.stamp.big svg{width:22px;height:22px}
+.v-solid{--vbg:var(--solid-bg);--vfg:var(--solid-fg);--vbd:var(--solid-bd)}
+.v-mixed{--vbg:var(--mixed-bg);--vfg:var(--mixed-fg);--vbd:var(--mixed-bd)}
+.v-weak{--vbg:var(--weak-bg);--vfg:var(--weak-fg);--vbd:var(--weak-bd)}
+.v-risky{--vbg:var(--risky-bg);--vfg:var(--risky-fg);--vbd:var(--risky-bd)}
+
+/* hero */
+.hero{padding:44px 0 28px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:40px;align-items:start}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(2.5rem,6.2vw,4.9rem);line-height:1.02;letter-spacing:-.03em;margin:0 0 20px}
+.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--mixed-bg) 62%);padding:0 .08em}
+.hero p.lead{font-size:1.3rem;max-width:34em;margin:0 0 24px;color:var(--ink2)}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap}
+.btn{font-family:var(--display);font-weight:700;font-size:1.05rem;text-decoration:none;padding:12px 22px;border-radius:10px;border:2px solid var(--ink);display:inline-block}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{transform:translateY(-1px)}
+.legend{background:var(--surface);border:2px solid var(--ink);border-radius:14px;padding:20px 22px}
+.legend h2{font-family:var(--display);font-size:1.1rem;margin:0 0 14px;font-weight:800}
+.legend ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.legend li{display:grid;grid-template-columns:104px 1fr;gap:12px;align-items:center;font-size:1rem;line-height:1.4}
+.legend .stamp{justify-self:start}
+@keyframes stampIn{0%{opacity:0;transform:scale(1.7) rotate(-9deg)}60%{opacity:1;transform:scale(.96) rotate(-2deg)}100%{opacity:1;transform:scale(1) rotate(-2deg)}}
+.legend li:nth-child(1) .stamp{animation:stampIn .45s .15s both}
+.legend li:nth-child(2) .stamp{animation:stampIn .45s .40s both}
+.legend li:nth-child(3) .stamp{animation:stampIn .45s .65s both}
+.legend li:nth-child(4) .stamp{animation:stampIn .45s .90s both}
+@media (prefers-reduced-motion: reduce){.legend .stamp{animation:none!important}.btn:hover{transform:none}}
+
+.why{border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);padding:18px 0;margin:10px 0 34px}
+.why p{margin:0;max-width:56em;font-size:1.1rem}
+.why strong{font-family:var(--display);font-weight:800}
+
+/* controls */
+.controls{display:grid;gap:14px;margin-bottom:22px}
+.ctl-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ctl-label{font-family:var(--display);font-weight:700;font-size:.95rem;margin-right:6px;color:var(--ink2)}
+.chip{font-family:var(--display);font-weight:700;font-size:.95rem;background:var(--surface);color:var(--ink);border:2px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;display:inline-flex;gap:8px;align-items:center}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip .dot{width:10px;height:10px;border-radius:50%;background:var(--dot,var(--ink));flex:none}
+.search{font-family:var(--body);font-size:1.05rem;padding:10px 14px;border:2px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);min-width:min(100%,320px)}
+.search:focus{border-color:var(--accent)}
+.count{font-family:var(--display);font-weight:700;color:var(--ink2);margin:0}
+
+/* grid cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px;list-style:none;margin:0;padding:0}
+.card{display:flex;flex-direction:column;gap:10px;height:100%;background:var(--surface);color:var(--ink);text-decoration:none;border:2px solid var(--line);border-left:10px solid var(--cat);border-radius:12px;padding:16px 16px 14px 16px}
+.card:hover{border-color:var(--ink);border-left-color:var(--cat)}
+.card-top{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.cat-label{font-family:var(--display);font-weight:700;font-size:.85rem;color:var(--ink2)}
+.card-name{font-family:var(--display);font-weight:800;font-size:1.35rem;line-height:1.15;letter-spacing:-.01em}
+.card-hook{font-size:1.02rem;line-height:1.45;color:var(--ink2);flex:1}
+.card-foot{font-family:var(--display);font-weight:700;font-size:.85rem;color:var(--ink2)}
+.empty{padding:40px 0;font-family:var(--display);font-weight:700;font-size:1.2rem}
+
+
+/* hover preview */
+.cell{position:relative}
+.cell .card{position:relative}
+.peek{position:absolute;left:-4px;right:-4px;top:-4px;min-height:calc(100% + 8px);z-index:6;display:none;flex-direction:column;gap:6px;background:var(--surface);color:var(--ink);border:3px solid var(--ink);border-left:12px solid var(--cat);border-radius:14px;padding:14px 16px;box-shadow:0 14px 30px rgba(10,14,50,.28);pointer-events:none}
+.peek-name{font-family:var(--display);font-weight:800;font-size:1.2rem;line-height:1.15}
+.peek-h{font-family:var(--display);font-weight:700;font-size:.8rem;color:var(--ink2);margin-top:4px}
+.peek-t{font-size:.98rem;line-height:1.45}
+.peek-v{display:block;margin:2px 0}
+.peek-go{font-family:var(--display);font-weight:800;font-size:.9rem;color:var(--accent);margin-top:6px}
+@media (hover:hover){
+  .cell:hover{z-index:7}
+  .cell:hover .peek{display:flex}
+}
+.cell:focus-within{z-index:7}
+.cell:focus-within .peek{display:flex}
+@media (hover:none){.peek{display:none!important}}
+
+/* dialog */
+dialog{border:3px solid var(--ink);border-radius:16px;padding:0;background:var(--surface);color:var(--ink);width:min(760px,calc(100vw - 24px));max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto}
+dialog::backdrop{background:rgba(8,12,38,.65)}
+.dlg-band{height:14px;background:var(--cat)}
+.dlg-in{padding:22px 26px 30px}
+.dlg-head{display:flex;justify-content:space-between;gap:12px;align-items:flex-start;margin-bottom:6px}
+.dlg-cat{font-family:var(--display);font-weight:700;color:var(--ink2);margin:0 0 4px}
+.dlg h2,dialog h2{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,4.5vw,2.6rem);line-height:1.08;letter-spacing:-.02em;margin:0 0 14px}
+.close{font-family:var(--display);font-weight:700;background:var(--ink);color:var(--paper);border:0;border-radius:999px;padding:8px 16px;cursor:pointer;flex:none}
+.seen{font-family:var(--display);font-weight:700;font-size:1.05rem;background:var(--paper);border-left:6px solid var(--cat);padding:12px 16px;border-radius:0 10px 10px 0;margin:0 0 18px}
+.seen span{display:block;font-size:.85rem;color:var(--ink2);margin-bottom:2px}
+dialog h3{font-family:var(--display);font-weight:800;font-size:1.15rem;margin:22px 0 8px}
+dialog p{margin:0 0 10px}
+dialog ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+dialog li{position:relative;padding-left:22px}
+dialog li::before{content:"";position:absolute;left:0;top:.6em;width:10px;height:10px;background:var(--cat);border-radius:2px}
+.watch{background:var(--paper);border:2px solid var(--line);border-radius:10px;padding:12px 16px}
+.fine{font-size:.95rem;color:var(--ink2);margin-top:20px!important}
+sup.refs{font-family:var(--display);font-size:.7rem;line-height:0;margin-left:3px;white-space:nowrap}
+a.ref{display:inline-block;min-width:1.5em;text-align:center;padding:1px 4px;margin-left:2px;border-radius:5px;background:var(--paper);border:1px solid var(--line);color:var(--accent);text-decoration:none;font-weight:700}
+a.ref:hover{border-color:var(--accent)}
+
+/* inner pages */
+.page{padding:40px 0 20px}
+.page h1{font-family:var(--display);font-weight:800;font-size:clamp(2.2rem,5.5vw,4rem);line-height:1.05;letter-spacing:-.03em;margin:0 0 16px}
+.page .lead{font-size:1.25rem;color:var(--ink2);max-width:40em;margin:0 0 30px}
+.page h2{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.02em;line-height:1.1;margin:44px 0 16px}
+.page h3{font-family:var(--display);font-weight:800;font-size:1.25rem;margin:0 0 6px;line-height:1.2}
+.pgroup{border-top:2px solid var(--ink);padding-top:6px;margin-top:34px}
+.pgroup > h2{margin-top:10px}
+.pitems{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.pitem{background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:18px 20px}
+.pitem p{margin:0 0 10px}
+.seenin{font-family:var(--display);font-weight:700;font-size:.92rem;margin:0}
+.seenin a{margin-right:10px;white-space:nowrap}
+.rows{display:grid;gap:0;border:2px solid var(--ink);border-radius:12px;overflow:hidden;background:var(--surface)}
+.rows h3.vh{margin:0;padding:10px 16px;background:var(--ink);color:var(--paper);font-size:1rem}
+.row{display:grid;grid-template-columns:minmax(150px,230px) 110px 1fr;gap:14px;align-items:start;padding:14px 16px;border-top:1px solid var(--line)}
+.row:first-of-type{border-top:0}
+.row .nm{font-family:var(--display);font-weight:800;line-height:1.2}
+.row .nm a{color:var(--ink)}
+.row p{margin:0;font-size:1rem;line-height:1.5}
+.checks{display:grid;gap:12px;counter-reset:q;padding:0;list-style:none;margin:0}
+.checks li{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:14px 18px}
+.checks li::before{counter-increment:q;content:counter(q);font-family:var(--display);font-weight:800;font-size:1.4rem;width:40px;height:40px;display:grid;place-items:center;border-radius:50%;background:var(--accent);color:var(--accent-ink)}
+.checks b{font-family:var(--display);font-weight:800;display:block}
+.callout{background:var(--surface);border:2px solid var(--ink);border-radius:14px;padding:20px 24px;margin-top:30px}
+.callout h2{margin:0 0 8px!important}
+.callout p{margin:0 0 8px}
+
+.method{background:var(--surface);border:2px solid var(--ink);border-radius:14px;padding:6px 24px 14px}
+.method ul{margin:10px 0 0;padding-left:1.2em;display:grid;gap:8px}
+.srcgroup{margin-top:30px}
+.srcgroup h2{margin:0 0 12px!important}
+.srclist{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.src{display:grid;grid-template-columns:48px 1fr;gap:14px;background:var(--surface);border:2px solid var(--line);border-radius:12px;padding:12px 16px}
+.src.hl{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent)}
+.src .n{font-family:var(--display);font-weight:800;font-size:1.1rem;width:40px;height:40px;border-radius:8px;background:var(--ink);color:var(--paper);display:grid;place-items:center}
+.src .t{font-family:var(--display);font-weight:700;font-size:1.05rem;line-height:1.3;word-break:break-word}
+.src .m{font-size:.98rem;color:var(--ink2);margin:2px 0}
+.src .u{font-size:.92rem;color:var(--ink2);margin:4px 0 0}
+.src .u a{margin-right:8px;white-space:nowrap}
+.src .nd{font-family:var(--display);font-weight:700;font-size:.8rem;background:var(--mixed-bg);color:var(--mixed-fg);border:1px solid var(--mixed-bd);padding:1px 8px;border-radius:5px;margin-left:6px}
+
+footer{margin-top:60px;border-top:2px solid var(--ink);padding:24px 0 40px;font-size:1rem;color:var(--ink2)}
+footer p{margin:0 0 6px;max-width:56em}
+
+@media (max-width:860px){
+  .hero-grid{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr;gap:6px}
+  .row .stamp{justify-self:start}
+}
+@media (max-width:520px){
+  body{font-size:1.06rem}
+  .dlg-in{padding:18px 18px 26px}
+  .legend li{grid-template-columns:96px 1fr}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#app">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#/" aria-label="Hype Check home">
+      <span class="logo-mark" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8.5l3.2 3.2L13 4.8"/></svg></span>
+      Hype Check
+    </a>
+    <nav aria-label="Main">
+      <a class="nl" href="#/" data-nav="home">Trends</a>
+      <a class="nl" href="#/pitfalls" data-nav="pitfalls">Pitfalls</a>
+      <a class="nl" href="#/sources" data-nav="sources">Sources</a>
+      <button class="theme" id="themeBtn" type="button" aria-pressed="false">Dark mode</button>
+    </nav>
+  </div>
+</header>
+
+<main id="app" tabindex="-1"></main>
+
+<footer>
+  <div class="wrap">
+    <p>Nannestad High School - Barbara Anna Zielonka</p>
+    <p>This site gives general information. It is not medical advice. Talk to a doctor, pharmacist or the school health nurse about your own health. Sources last checked on 7 October 2026.</p>
+  </div>
+</footer>
+
+<dialog id="dlg" aria-labelledby="dlgTitle"></dialog>
+<noscript><div class="wrap"><p>This site needs JavaScript to show the trends.</p></div></noscript>
+
+<script>
+(function(){
+"use strict";
+
+/* ---------- icons and verdicts ---------- */
+var ICON = {
+  solid:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8.5l3.2 3.2L13 4.8"/></svg>',
+  mixed:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1.8 9c2-3.2 4-3.2 6.2 0s4.2 3.2 6.2 0"/></svg>',
+  weak:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="8" r="5.8"/><path d="M5.2 8h5.6"/></svg>',
+  risky:'<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2.2L14.6 13.8H1.4z"/><path d="M8 6.6v3.2M8 11.7v.1"/></svg>'
+};
+var VERD = {
+  solid:{label:"Solid",desc:"The experts in our sources support the core idea."},
+  mixed:{label:"Mixed",desc:"Some support and some doubts, or it depends on how you do it."},
+  weak:{label:"Weak",desc:"The sources find little evidence for the main claim."},
+  risky:{label:"Risky",desc:"The sources describe a real chance of harm."}
+};
+var VORDER = ["risky","weak","mixed","solid"];
+var CATS = {
+  food:{label:"Food and drink",color:"var(--c-food)"},
+  mind:{label:"Sleep and mind",color:"var(--c-mind)"},
+  move:{label:"Body and movement",color:"var(--c-move)"},
+  look:{label:"Look and skin",color:"var(--c-look)"},
+  tech:{label:"Drugs, supplements and tech",color:"var(--c-tech)"}
+};
+
+/* ---------- sources ---------- */
+var SRC = [
+{id:1,t:"FiberMaxxing: The Truth About Fiber, Your Gut Microbiome and Digestive Health",o:"Cleveland Clinic, Butts and Guts podcast",d:null,u:"https://my.clevelandclinic.org/podcasts/butts-and-guts/fibermaxxing-the-truth-about-fiber-your-gut-microbiome-and-digestive-health"},
+{id:2,t:"Fibermaxxing: Is More Fiber Always Better?",o:"University Hospitals",d:"April 2026",u:"https://www.uhhospitals.org/blog/articles/2026/04/fibermaxxing-is-more-fiber-always-better"},
+{id:3,t:"Fibermaxxing trend encourages people to eat more fiber",o:"HealthDay, hosted by Powers Health",d:"9 March 2026",u:"https://powershealth.org/about-us/newsroom/health-library/2026/03/09/fibermaxxing-trend-encourages-people-to-eat-more-fiber"},
+{id:4,t:"5 TikTok Health Trends: Heart or Hype?",o:"HealthyWomen",d:"20 January 2026",u:"https://www.healthywomen.org/your-wellness/facts-about-tiktok-health-trends"},
+{id:5,t:"Teens are trying to bulk up on protein supplements. What should parents watch for?",o:"NPR, via WGCU",d:"21 July 2025",u:"https://www.wgcu.org/2025-07-21/teens-are-trying-to-bulk-up-on-protein-supplements-what-should-parents-watch-for"},
+{id:6,t:"Protein Craze",o:"Scholastic Science World",d:"Issue of 1 September 2026",u:"https://scienceworld.scholastic.com/issues/2026-27/090126/protein-craze.html"},
+{id:7,t:"In an Age of 'Protein Maxxing' and 'Boy Kibble,' Experts Urge Caution",o:"Reporting Texas",d:"8 April 2026",u:"https://www.reportingtexas.com/in-an-age-of-protein-maxing-and-boy-kibble-experts-urge-caution/"},
+{id:8,t:"Wellness trends worth taking into the new year (and some that aren't)",o:"NPR",d:"4 January 2026",u:"https://www.npr.org/2026/01/04/nx-s1-5665123/wellness-trends-new-year"},
+{id:9,t:"Beef Tallow: Miracle Oil or Wellness Fad?",o:"University Hospitals",d:"May 2025",u:"https://www.uhhospitals.org/blog/articles/2025/05/beef-tallow-miracle-oil-or-wellness-fad"},
+{id:10,t:"Push for raw milk intensifies across the US despite illness outbreaks and scientists' warnings",o:"Courthouse News Service",d:"23 April 2025",u:"https://www.courthousenews.com/push-for-raw-milk-intensifies-across-the-us-despite-illness-outbreaks-and-scientists-warnings/"},
+{id:11,t:"The Revival of Raw Milk: Part II",o:"Nutrition Health Review",d:"September and October 2025",u:"https://nhr.mydigitalpublication.com/articles/the-revival-of-raw-milk-part-ii"},
+{id:12,t:"Are prebiotic sodas good for you?",o:"Northeastern Global News",d:"12 June 2024",u:"https://news.northeastern.edu/2024/06/12/are-prebiotic-sodas-good-for-you/"},
+{id:13,t:"What's the deal with electrolyte drinks? Do you need them to stay hydrated?",o:"NPR, via Georgia Public Broadcasting",d:"4 August 2025",u:"https://www.gpb.org/news/2025/08/04/whats-the-deal-electrolyte-drinks-do-you-need-them-stay-hydrated"},
+{id:14,t:"Caffeine Levels in Energy Drinks Are Risky for Teens",o:"Consumer Reports",d:"2026 (exact date not shown)",u:"https://consumerreports.org/health/beverages/caffeine-in-energy-drinks-risky-teens-a2915223215/"},
+{id:15,t:"What Parents Need to Know About Caffeine, Energy Drinks, and Trendy Beverages",o:"Texas Health Resources",d:"25 June 2025",u:"https://www.texashealth.org/areyouawellbeing/Family-Health/What-Parents-Need-to-Know-About-Caffeine-Energy-Drinks-and-Trendy-Beverages"},
+{id:16,t:"Obsessed with your sleep score? How sleepmaxxing could be making your nights worse",o:"The Week India",d:"8 September 2026",u:"https://www.theweek.in/news/health/2026/09/08/obsessed-with-your-sleep-score-how-sleepmaxxing-could-be-making-your-nights-worse.amp.html"},
+{id:17,t:"Sleepmaxxing is the newest wellness trend, but does it actually work? (Alyssa Jaffer)",o:"National Geographic",d:"23 January 2025",u:"https://www.nationalgeographic.com/science/article/does-sleepmaxxing-work"},
+{id:18,t:"Doctors warn against mouth taping during sleep",o:"HealthDay",d:"29 September 2025",u:"https://www.healthday.com/health-news/doctors-warn-against-mouth-taping-during-sleep"},
+{id:19,t:"Mouth taping for better sleep? Little benefit, lots of risk, review says",o:"HealthDay, hosted by Powers Health (reports a PLOS One review)",d:"22 May 2025",u:"https://www.powershealth.org/about-us/newsroom/health-library/2025/05/22/mouth-taping-for-better-sleep-little-benefit-lots-of-risk-review-says"},
+{id:20,t:"The 'cortisol cocktail' has gone viral on TikTok, but can it actually reduce stress? Here's what doctors say",o:"CNBC, via NBC New York",d:"July 2025",u:"https://www.nbcnewyork.com/news/business/money-report/the-cortisol-cocktail-has-gone-viral-on-tiktok-but-can-it-actually-reduce-stress-heres-what-doctors-say/6326382/"},
+{id:21,t:"Bed rotting as self care: What a mental health expert wants you to watch out for",o:"WBUR Here and Now, via KVCR",d:"17 September 2025",u:"https://www.kvcrnews.org/2025-09-17/bed-rotting-as-self-care-what-a-mental-health-expert-wants-you-to-watch-out-for"},
+{id:22,t:"Is bed rotting helping or harming our health?",o:"Patient.info (peer reviewed by a GP)",d:"19 January 2026",u:"https://patient.info/features/healthy-living/is-bed-rotting-helping-or-harming-our-health?lang=null"},
+{id:23,t:"Dopamine detox",o:"Cleveland Clinic Health Essentials",d:"9 September 2024",u:"https://health.clevelandclinic.org/dopamine-detox"},
+{id:24,t:"Dr Anastasia Hronis: The Science Behind the Dopamine Detox",o:"JOY 94.9 podcast",d:"1 November 2025",u:"https://joy.org.au/joydrive/2025/11/01/dr-anastasia-hronis-the-science-behind-the-dopamine-detox/"},
+{id:25,t:"Smartphone Bans, Student Outcomes and Mental Health (Sara Abrahamsson)",o:"Journal of Human Resources",d:"11 March 2026",u:"https://jhr.uwpress.org/node/16076"},
+{id:26,t:"Cold plunges: Healthy or harmful for your heart?",o:"Harvard Health Publishing",d:null,u:"https://www.health.harvard.edu/heart-health/cold-plunges-healthy-or-harmful-for-your-heart"},
+{id:27,t:"The Benefits and Risks of Cold Plunges",o:"Cleveland Clinic Health Essentials",d:"1 June 2025",u:"https://health.clevelandclinic.org/what-to-know-about-cold-plunges"},
+{id:28,t:"Are cold plunges and saunas safe for kids?",o:"Fortune Well",d:"2025 (exact date not confirmed)",u:"https://fortune.com/well/article/cold-plunge-sauna-kids-safety"},
+{id:29,t:"Strong Girls, Stronger Futures: Why Strength Training is Important for Young Female Athletes",o:"Emory Healthcare",d:"29 July 2026",u:"https://www.emoryhealthcare.org/stories/ortho/strong-girls-stronger-futures-why-strength-training-is-important-for-young-female-athletes"},
+{id:30,t:"Steroid use falls, but creatine use climbs rapidly",o:"University of Michigan Institute for Social Research",d:"14 May 2026",u:"https://src.isr.umich.edu/news-events/news/steroid-use-falls-but-creatine-use-climbs-rapidly/"},
+{id:31,t:"More teens are using creatine, health experts say. What is it and is it safe?",o:"CTV News",d:"September 2026",u:"https://ctvnews.ca/health/article/more-teens-are-using-creatine-health-experts-say-what-is-it-and-is-it-safe/"},
+{id:32,t:"Popular TikTok Trends to Avoid: The Dangers of Viral Wellness",o:"American Lung Association",d:"12 March 2026",u:"https://www.lung.org/blog/health-tiktok-trends"},
+{id:33,t:"Looksmaxxing: The Pressure to Look Perfect",o:"Nationwide Children's Hospital",d:"April 2026",u:"https://www.nationwidechildrens.org/family-resources-education/700childrens/2026/04/looksmaxxing"},
+{id:34,t:"How to talk to boys about looksmaxxing",o:"Michigan Public",d:"1 May 2026",u:"https://www.michiganpublic.org/2026-05-01/how-to-talk-to-boys-about-looksmaxxing"},
+{id:35,t:"Young creators are driving #SkinnyTok, and experts say their content could be seriously harmful",o:"Ypulse (summarizes Rolling Stone)",d:"24 April 2025",u:"https://www.ypulse.com/newsfeed/2025/04/24/young-creators-are-driving-skinnytok-and-experts-say-their-content-could-be-seriously-harmful/"},
+{id:36,t:"Skinnytok: Psychologists Warn of Dangerous TikTok Trend",o:"Vienna.at (reports a warning from the Professional Association of Austrian Psychologists)",d:"5 June 2026",u:"https://www.vienna.at/skinnytok-psychologists-warn-of-dangerous-tiktok-trend/10233926"},
+{id:37,t:"Experts: It makes no sense for tweens to buy \"anti-aging\" skin care products",o:"Axios",d:"25 January 2024",u:"https://www.axios.com/2024/01/25/sephora-kids-tweens-anti-aging-skin-care-parents"},
+{id:38,t:"California proposes ban on antiaging skincare sales to minors amid rising 'Sephora kids' trend",o:"NBC Palm Springs",d:"24 June 2025",u:"https://www.nbcpalmsprings.com/therogginreport/2025/06/24/california-proposes-ban-on-antiaging-skincare-sales-to-minors-amid-rising-sephora-kids-trend"},
+{id:39,t:"Misinformation puts over 16 million Americans at an increased risk for skin cancer (American Academy of Dermatology survey)",o:"American Academy of Dermatology, via Newswise",d:"1 May 2026",u:"https://www.newswise.com/articles/misinformation-puts-over-16-million-americans-at-an-increased-risk-for-skin-cancer"},
+{id:40,t:"Sharp Rise in Sun Damage Reveals Dangerous Disconnect Between Belief and Behavior",o:"Managed Healthcare Executive (reports a 2025 American Academy of Dermatology survey)",d:"2025 (exact date not shown)",u:"https://www.managedhealthcareexecutive.com/view/sharprise-in-sun-damage-reveals-dangerous-disconnect-between-belief-and-behavior"},
+{id:41,t:"Electronic word of mouth and off label use of Ozempic and other GLP-1 medications (Ugwu, Willis and Pickett)",o:"University of Colorado Boulder research record",d:"28 January 2026",u:"https://vivo-cub.colorado.edu/display/pubid_509033"},
+{id:42,t:"From Cost to Celebrity Hype, Michael DiStefano Explains the Risks of Compounded Weight Loss Drugs",o:"CU Anschutz",d:"8 September 2025",u:"https://news.cuanschutz.edu/pharmacy/from-cost-to-celebrity-hype-michael-distefano-explains-the-risks-of-compounded-weight-loss-drugs"},
+{id:43,t:"New visiting academic joins NCYSUR to study social media portrayals of emerging drugs",o:"National Centre for Youth Substance Use Research, Australia",d:"March 2026",u:"https://www.connections.edu.au/projects/new-visiting-academic-joins-ncysur-study-social-media-portrayals-emerging-drugs"},
+{id:44,t:"Analysis: The peptide problem: Hype is outrunning the evidence (Stuart Phillips)",o:"McMaster University",d:"7 May 2026",u:"https://news.mcmaster.ca/analysis-the-peptide-problem-hype-is-outrunning-the-evidence/"},
+{id:45,t:"FDA panel narrowly backs unapproved peptide drug touted by Joe Rogan and other influencers",o:"Associated Press, via WPLG Local 10",d:"23 July 2026",u:"https://www.local10.com/business/2026/07/23/fda-panel-narrowly-backs-unapproved-peptide-drug-touted-by-joe-rogan-and-other-influencers/"},
+{id:46,t:"Use of nicotine pouches increases significantly among U.S. teens",o:"USC Keck School of Medicine",d:"30 April 2025",u:"https://keck.usc.edu/news/use-of-nicotine-pouches-increases-significantly-among-u-s-teens"},
+{id:47,t:"FDA Clears Zyn: Will Nicotine Pouches Hook a New Generation?",o:"UCSF",d:"May 2026",u:"https://www.ucsf.edu/news/2026/05/431921/fda-clears-zyn-will-nicotine-pouches-hook-new-generation"},
+{id:48,t:"What are Zyn nicotine pouches and are they safe?",o:"PBS NewsHour",d:"8 August 2026",u:"https://pbs.org/newshour/health/what-are-zyn-nicotine-pouches-and-are-they-safe"},
+{id:49,t:"Continuous glucose monitors are in vogue, but do you really need to track your blood sugar?",o:"Associated Press, via News4JAX",d:"25 July 2025",u:"https://www.news4jax.com/news/2025/07/25/continuous-glucose-monitors-are-in-vogue-but-do-you-really-need-to-track-your-blood-sugar/"},
+{id:50,t:"One in Five Adolescents Uses Chatbots for Mental Health Advice (reports a JAMA Pediatrics study, published online 1 June 2026)",o:"Psychiatric News Alert",d:"June 2026",u:"https://alert.psychnews.org/one-in-five-adolescents-uses-chatbots-for-mental-health-advice"},
+{id:51,t:"New research raises concerns over teens using AI for mental health support",o:"WPLG Local 10",d:"10 June 2026",u:"https://www.local10.com/health/2026/06/10/new-research-raises-concerns-over-teens-using-ai-for-mental-health-support/"},
+{id:52,t:"Teens are turning to AI chatbots for emotional support. Here's how to keep kids safe",o:"PhillyVoice",d:"16 August 2026",u:"https://www.phillyvoice.com/ai-chatbots-teen-safety-emotional-support-parenting-tips/"},
+{id:53,t:"Moms, Coaches, Doctors, Entrepreneurs: Who are America's health and wellness influencers?",o:"Pew Research Center",d:"7 May 2026",u:"https://www.pewresearch.org/data-labs/2026/05/07/moms-coaches-doctors-entrepreneurs-who-are-americas-health-and-wellness-influencers/"},
+{id:54,t:"Many older adults get health information from self-defined experts online",o:"Harvard Health Publishing",d:"2026 (published after 7 May)",u:"https://www.health.harvard.edu/preventive-care/many-older-adults-get-health-information-from-self-defined-experts-online"},
+{id:55,t:"Health advice is all over social media. Here's how to vet claims",o:"The Atlanta Journal-Constitution (Associated Press)",d:"9 May 2026",u:"https://www.ajc.com/news/2026/05/health-advice-is-all-over-social-media-heres-how-to-vet-claims/"},
+{id:56,t:"Content analysis of Zyn nicotine pouch posts on Instagram and TikTok",o:"JMIR Infodemiology",d:"2026",u:"https://infodemiology.jmir.org/2026/1/e88825"},
+{id:57,t:"Half of American adults get health info from social media influencers, yet few trust them",o:"PhillyVoice (reports the Pew study)",d:"7 May 2026",u:"https://phillyvoice.com/social-media-influencers-health-info-pew-research/"},
+{id:58,t:"'Bed rotting' trend sparks debate over self care and mental health",o:"News On 6",d:"2026 (exact date not shown)",u:"https://www.newson6.com/health/bed-rotting-trend-self-care-mental-health"},
+{id:59,t:"The Norwegian ban on smart phones in middle schools (blog commentary, used only to confirm the paper appeared in 2024)",o:"Marginal Revolution",d:"April 2024",u:"https://marginalrevolution.com/marginalrevolution/2024/04/the-norwegian-ban-on-smart-phones-in-middle-schools.html"}
+];
+var SRCMAP = {};
+SRC.forEach(function(s){SRCMAP[s.id]=s;});
+
+/* ---------- trends ---------- */
+var T = [
+{id:"fibermaxxing",name:"Fibermaxxing",cat:"food",v:"solid",
+ hook:"Eat more fiber on purpose, at every meal.",
+ what:"Fibermaxxing means choosing foods that are high in fiber all day. Think fruit, vegetables, whole grains, beans, nuts and seeds. [[2,4]]",
+ ev:["A dietitian at University Hospitals calls it generally a positive trend because it pushes people to eat more fiber. [[2]]",
+     "Researchers quoted by HealthDay say too little fiber can raise the risk of heart disease, diabetes and obesity. [[3]]",
+     "HealthyWomen reports that about 9 in 10 women in the US do not reach the recommended daily amount of fiber. [[4]]",
+     "A Cleveland Clinic podcast separates fact from hype and explains why most Americans get far too little fiber. [[1]]"],
+ watch:"Add fiber slowly and drink enough water. Too much fiber too fast, without enough water, can cause hard stools and bloating. [[4]]",
+ why:"Experts in all four sources see the basic idea as healthy."},
+
+{id:"protein",name:"Protein on everything",cat:"food",v:"mixed",
+ hook:"Protein coffee, protein popcorn and a protein goal at every meal.",
+ what:"Online, the trend goes by names like protein maxxing. It means building meals around protein, often with help from fitness influencers. [[7]]",
+ ev:["A University of Michigan poll of parents found that 40% of teens had used some kind of protein supplement in the past year. [[5]]",
+     "A pediatric dietitian at Children's National Hospital says most teens already get enough protein without supplements. A common guide is about 1 gram per kilogram of body weight each day. [[5,6]]",
+     "A pediatrician quoted by Science World says the biggest risk for teens is neglecting other nutrients when they focus too much on protein. [[6]]",
+     "Experts quoted by Reporting Texas say most Americans already eat enough protein. [[7]]"],
+ watch:"Science World says whole foods such as beans, eggs and dairy are a better source than powders. Some experts also link the trend to orthorexia, an unhealthy obsession with eating healthy. [[6,7]]",
+ why:"Protein matters. The experts quoted say most teens already get enough, so more is not better."},
+
+{id:"tallow",name:"Beef tallow and the seed oil panic",cat:"food",v:"weak",
+ hook:"Seed oils are bad for you and beef fat is the fix.",
+ what:"Influencers and some public figures promote beef tallow, which is rendered beef fat, as healthier than seed oils such as vegetable oil. Tallow skincare is trending too. [[8]]",
+ ev:["A cardiologist told NPR that beef tallow and other saturated fats can lead to clogged arteries and high blood pressure. He added that seed oils have been unfairly blamed. [[8]]",
+     "A dietitian at University Hospitals says there is very little long term research supporting beef tallow over other fats. [[9]]",
+     "The same article notes that tallow contains monounsaturated fats with some heart health benefits, and that it also carries health risks. [[9]]"],
+ watch:"One expert quoted by NPR says people pick tallow because it seems natural and comes from a farm. Judge a fat by the research on it. [[8]]",
+ why:"The claim that tallow beats seed oils has little support in the sources."},
+
+{id:"raw-milk",name:"Raw milk",cat:"food",v:"risky",
+ hook:"Unpasteurized milk is more natural and better for you.",
+ what:"Raw milk has not been heated to kill germs. The heating step is called pasteurization. [[10]]",
+ ev:["A CDC review counted more than 200 outbreaks tied to raw milk between 1998 and 2018. More than 2,600 people got sick and 225 went to hospital. [[10]]",
+     "A 2025 review article says the risks are clear and well established. It also says decades of research have found no evidence of health benefits. [[11]]",
+     "According to Google Trends data cited in that review, searches for raw milk reached an all time high in February 2025. [[11]]"],
+ watch:"Heating milk is the safety step. Skipping it adds risk with no proven benefit. [[10,11]]",
+ why:"A CDC review and a 2025 article describe clear risks and no proven benefits."},
+
+{id:"prebiotic-soda",name:"Prebiotic sodas",cat:"food",v:"mixed",
+ hook:"A soda that is good for your gut.",
+ what:"Prebiotic sodas such as Poppi add fiber that feeds gut bacteria, and they advertise gut health. [[12]]",
+ ev:["A 2024 lawsuit claimed one brand's can had only about 2 grams of prebiotic fiber, too little for real benefits. [[12]]",
+     "A Northeastern University professor says foods with prebiotics, such as fruit and vegetables, have strong evidence for supporting gut health. [[12]]",
+     "The professor said it could be true that the sugar in these drinks outweighs any benefit, as the lawsuit claims. [[12]]"],
+ watch:"A can does not replace fruit, vegetables and whole grains as a source of prebiotics. Check the label for fiber and sugar. [[12]]",
+ why:"They may have less sugar than regular soda, and the gut benefits are still debated."},
+
+{id:"electrolytes",name:"Electrolyte powders",cat:"food",v:"weak",
+ hook:"Add a packet to your water for better hydration.",
+ what:"Electrolyte powders such as Liquid I.V. have moved from sports into daily wellness. They add minerals called electrolytes to water. [[13]]",
+ ev:["A hydration researcher told NPR that unless you sweat heavily for a long time or lose water fast through illness, you do not need extra electrolyte supplements. [[13]]",
+     "If you eat a fairly balanced diet and are not an elite athlete or working in the sun all day, you most likely get the electrolytes you need from food. [[13]]",
+     "Plain water, milk, soup, tea and water rich foods all help you rehydrate. [[13]]"],
+ watch:"They can help after heavy sweating in the sun or during long runs. On most days, plain water does the job. [[13]]",
+ why:"Useful in a few situations, unnecessary for most people on most days, according to the NPR report."},
+
+{id:"energy-drinks",name:"Energy drinks",cat:"food",v:"risky",
+ hook:"A can of Prime, Celsius or Bang to push through the day.",
+ what:"Energy drinks are flavored drinks with caffeine. Influencers represent brands or sell their own drinks. [[14]]",
+ ev:["Consumer Reports tested 17 energy drinks and 6 energy shots. Brands such as Bang, Celsius and Prime contained two to three times the recommended daily caffeine limit for people under 18. [[14]]",
+     "Experts recommend that teens have no more than 100 mg of caffeine a day. [[14,15]]",
+     "Texas Health Resources, citing the American Academy of Pediatrics, says one can of Prime Energy has 200 mg, double the daily limit for teens. [[15]]"],
+ watch:"Caffeine can cause anxiety, jitteriness and stomach problems in teens. Check the milligrams on the label. [[15]]",
+ why:"Common cans exceed the daily caffeine limit that experts set for teens."},
+
+{id:"sleepmaxxing",name:"Sleepmaxxing",cat:"mind",v:"mixed",
+ hook:"Trackers, supplements, gadgets and routines for perfect sleep.",
+ what:"Sleepmaxxing is a catch all name for any tip, trick or gadget meant to help you fall asleep faster and sleep deeper. [[17]]",
+ ev:["Sleep experts told National Geographic that the most effective methods are old ones that match basic sleep hygiene. [[17]]",
+     "Research on magnesium and sleep quality is limited, and results for white noise devices are mixed. [[17]]",
+     "Focusing too much on perfect sleep has a name, orthosomnia, and it can make it harder to sleep well. [[16,17]]"],
+ watch:"Experts urge caution with extreme steps such as mouth taping and unregulated supplements. [[17]]",
+ why:"Basic sleep habits have support. Many add ons do not."},
+
+{id:"mouth-taping",name:"Mouth taping",cat:"mind",v:"risky",
+ hook:"Tape your mouth shut at night to breathe through your nose.",
+ what:"Mouth taping tries to stop mouth breathing during sleep, in the hope of less snoring and better rest. [[19]]",
+ ev:["A 2025 review in PLOS One examined 10 studies. Only 2 suggested a benefit, for people with mild sleep apnea. [[19]]",
+     "4 of the 10 studies warned of a serious risk of suffocation if mouth breathing comes from a blocked nose or airway. [[19]]",
+     "A sleep specialist at Oregon Health and Science University said the studies are small, the benefits modest and the risks real. [[18]]",
+     "Mouth breathing can be a sign of a condition such as obstructive sleep apnea. Doctors advise finding the cause. [[18]]"],
+ watch:"If you often breathe through your mouth at night, talk to a doctor before you reach for tape. [[18]]",
+ why:"Evidence of benefit is thin and the reviewed studies describe a serious risk for some people."},
+
+{id:"cortisol",name:"The cortisol cocktail",cat:"mind",v:"weak",
+ hook:"A mocktail that supposedly lowers your stress hormone.",
+ what:"Cortisol is a hormone that rises during emotional or physical stress. The drink went viral with claims that it can bring cortisol down. [[20]]",
+ ev:["Doctors told CNBC the drink is unlikely to lower cortisol and that good studies are missing. [[20]]",
+     "One doctor said none of the ingredients alone is known to reduce stress, except maybe magnesium. [[20]]",
+     "The drink might help you feel more hydrated, which most people could benefit from. [[20]]"],
+ watch:"A doctor in the article says the focus should be on managing stress and what causes it. [[20]]",
+ why:"The doctors in the CNBC report doubt the main claim."},
+
+{id:"bed-rotting",name:"Bed rotting",cat:"mind",v:"mixed",
+ hook:"Spend a whole day in bed on purpose as self care.",
+ what:"Bed rotting means spending long periods in bed doing low energy things such as scrolling. There is no clinical definition of it. [[22]]",
+ ev:["A GP reviewed article on Patient.info says a key warning sign is when bed rotting becomes a frequent habit and leaves you no more refreshed the next day. [[22]]",
+     "The same article says to avoid it if it leads to difficulties sleeping. [[22]]",
+     "Experts quoted by News On 6 say occasional bed rotting is not necessarily a problem, and that it can become one if it starts to interfere with daily life. [[58]]",
+     "In a WBUR interview, psychiatrist Dr. Jessi Gold talks about how to draw the line between rest and depression. [[21]]"],
+ watch:"Rest is healthy. If staying in bed becomes a pattern, take small steps back into your routine and talk to someone you trust. [[58]]",
+ why:"Occasional rest is fine. A habit that does not leave you refreshed is a warning sign."},
+
+{id:"dopamine-detox",name:"Dopamine detox",cat:"mind",v:"weak",
+ hook:"Quit scrolling for a day to reset your brain.",
+ what:"A dopamine detox means a break from quick rewards such as social media. A Cleveland Clinic psychologist explains that the idea grew from an older kind of psychological conditioning. [[23]]",
+ ev:["The same psychologist says there is no such thing as a true dopamine detox, because we need dopamine to live. [[23]]",
+     "She says low dopamine levels cause health problems, from chronic constipation to memory issues. [[23]]",
+     "Her advice is to swap the habit you cut for another pleasant activity that is more soothing. [[23]]",
+     "A psychologist at the University of Technology Sydney separates fact from hype in a November 2025 podcast. [[24]]"],
+ watch:"The name is misleading, so look at what the plan asks you to do. Cutting back on scrolling and replacing it with a calmer activity is the safe version. [[23]]",
+ why:"The brain reset claim is not supported. Cutting back on habits can still help."},
+
+{id:"phone-free",name:"Phone free time and school phone bans",cat:"mind",v:"mixed",
+ hook:"Lock the phone away to feel better and focus.",
+ what:"Norwegian middle schools introduced smartphone bans at different times. A researcher at the Norwegian Institute of Public Health used that to study what happened. [[25]]",
+ ev:["The study found that banning smartphones in middle schools had no average effect on education or mental health. [[25]]",
+     "The averages hide a gender difference. Bans reduced psychological health care use among girls and improved girls' grades. [[25]]",
+     "Bullying went down for both girls and boys. [[25]]"],
+ watch:"The study covers middle schools and school wide rules. It says nothing about personal phone breaks at home. The paper first appeared in 2024. [[25,59]]",
+ why:"Clear gains for some groups and no average effect overall."},
+
+{id:"wellness-stacking",name:"Wellness stacking",cat:"mind",v:"mixed",
+ hook:"Attach a healthy habit to one you already do.",
+ what:"Wellness stacking pairs small healthy habits with daily routines. Examples are stretching while the kettle boils or taking vitamins after brushing your teeth. [[4]]",
+ ev:["A therapist quoted by HealthyWomen says routines like this can reduce decision fatigue and make habits easier to keep. [[4]]",
+     "She warns that stacking can turn into performative productivity, a way to push yourself into exhaustion. [[4]]",
+     "Her test is simple. If your stack feels like self compassion, carry on. If it feels like another way you fall short, cut it back. [[4]]"],
+ watch:"Keep the stack small. Pressure to do everything cancels the point. [[4]]",
+ why:"This entry rests on one expert in one article, so treat it as a starting point."},
+
+{id:"japanese-walking",name:"Japanese walking method",cat:"move",v:"solid",
+ hook:"Alternate fast and slow walking for a stronger heart.",
+ what:"Also called interval walking. You alternate three minutes at a moderate pace with three minutes at a faster pace. It is named after a 2007 study from Japan. [[4]]",
+ ev:["An exercise physiologist quoted by HealthyWomen says it builds cardiovascular endurance in less time and puts little strain on the body. [[4]]",
+     "She says raising your heart rate for longer periods can lower blood pressure and may help with sleep, mood and mobility. [[4]]",
+     "HealthyWomen rates it as a trend with substance. [[4]]"],
+ watch:"This entry rests on one article. In the fast phase you walk quickly enough that talking becomes harder. [[4]]",
+ why:"A low risk way to raise your heart rate, backed by an expert source."},
+
+{id:"cold-sauna",name:"Cold plunges and saunas",cat:"move",v:"mixed",
+ hook:"Ice baths and hot rooms for recovery, mood and immunity.",
+ what:"A cold plunge is a short dip in very cold water. Saunas use heat. Both have spread from gyms and wellness resorts to social media. [[26,28]]",
+ ev:["Harvard Health says the evidence for claimed benefits such as less stress, better sleep and stronger immunity is thin. [[26]]",
+     "Cold plunges may ease muscle soreness after intense exercise, and they may reduce gains in muscle power and strength. [[26]]",
+     "Cleveland Clinic says prolonged exposure can lead to hypothermia, so keep it short. [[27]]",
+     "A Fortune report says research suggests benefits for adults, that teens' developing bodies are more vulnerable to extreme conditions, and that one expert saw no compelling evidence for detox claims. [[28]]"],
+ watch:"Harvard Health says people with heart disease, especially heart rhythm problems, should avoid cold plunges. [[26]]",
+ why:"Some short term benefits, thin evidence for the big claims, and real risks."},
+
+{id:"strength",name:"Strength training for teens",cat:"move",v:"solid",
+ hook:"Lifting is for everyone, including girls.",
+ what:"Strength training uses weights, bands or your own body weight to build muscle. It has long been viewed differently for girls than for boys. [[29]]",
+ ev:["An Emory Healthcare article says research shows girls can do strength exercises as well as boys. [[29]]",
+     "The article calls it a misconception that strength training means lifting heavy weights. [[29]]",
+     "It says strength training can keep adolescents engaged in physical activity. [[29]]"],
+ watch:"Start with good technique and get advice from a qualified coach or teacher.",
+ why:"A specialist source supports it for girls and boys."},
+
+{id:"creatine",name:"Creatine",cat:"move",v:"mixed",
+ hook:"A powder for muscle that everyone seems to be taking.",
+ what:"Creatine is a compound your body makes and that you also get from food. It is sold as a supplement. [[30]]",
+ ev:["A University of Michigan study found that creatine use among US teens rose rapidly in recent years while steroid use fell. [[30]]",
+     "The researchers suggest that the rise of gym influencers who promote supplements may be one reason. [[30]]",
+     "A pediatrician told CTV he discourages teens from using it because studies on safety in young people are lacking. Another expert says it can be an effective tool alongside training and good nutrition. [[31]]"],
+ watch:"The Michigan team warns that highly caffeinated pre workout mixes and energy drinks, which often go with creatine routines, can be harmful for teens. [[30]]",
+ why:"Experts disagree on teen safety because long term studies in young people are lacking."},
+
+{id:"dry-scooping",name:"Dry scooping",cat:"move",v:"risky",
+ hook:"Eat pre workout powder straight from the scoop.",
+ what:"Dry scooping means putting pre workout powder straight into your mouth without mixing it with liquid. The trend began with claims of faster absorption and more energy. [[32]]",
+ ev:["The American Lung Association says dry scooping, mouth taping and putting garlic in the nose do not deliver their claims and can seriously risk your health. [[32]]",
+     "A lung specialist quoted in the article says to use social media with extreme caution when you look for health information. [[32]]"],
+ watch:"Follow the directions on the label and ask a pharmacist or doctor about any supplement. [[32]]",
+ why:"A respiratory health charity warns of serious risk and finds no proven benefit."},
+
+{id:"looksmaxxing",name:"Looksmaxxing",cat:"look",v:"risky",
+ hook:"Optimize your face and body with a strict plan.",
+ what:"Looksmaxxing is the idea that you can and should maximize your appearance. Mild versions include skincare and basic hygiene. Extreme versions use steroids, growth hormones, injectables or cosmetic surgery. [[33]]",
+ ev:["Nationwide Children's Hospital says the hidden message is that appearance equals worth. This can lead to anxiety, shame, low self esteem and a distorted body image. [[33]]",
+     "Routines can take over and leave less time for school, friends and fun. [[33]]",
+     "Dr. Beresin, quoted by Michigan Public, reports a spike in worrying behavior among teen boys about their looks, including eating disorders and body dysmorphia. [[34]]"],
+ watch:"Basics such as washing and sunscreen are fine. Extreme steps and constant self scrutiny are the warning signs. [[33]]",
+ why:"Pediatric experts link the extreme version to anxiety, body image problems and eating disorders."},
+
+{id:"skinnytok",name:"SkinnyTok",cat:"look",v:"risky",
+ hook:"Tough love advice that treats thinness as the goal.",
+ what:"SkinnyTok is a label for videos that present extreme thinness as a beauty ideal. TikTok blocked the hashtag, and similar content can still be found with other search terms. [[36]]",
+ ev:["The Professional Association of Austrian Psychologists warns that this content can lead to obsessive calorie counting, excessive exercise and eating disorders such as anorexia, especially in teenagers. [[36]]",
+     "An eating disorder expert quoted by Ypulse worries that the tone amplifies self critical thoughts and ties worth to appearance. [[35]]",
+     "Eating disorders are treatable illnesses, and getting help early matters. [[36]]"],
+ watch:"If a feed makes you feel worse about your body, mute or block it and talk to someone you trust, such as the school health nurse or a doctor.",
+ why:"Psychologists warn of serious harm, especially for young people."},
+
+{id:"sephora-kids",name:"Sephora kids and tween skincare",cat:"look",v:"weak",
+ hook:"Long routines with anti aging serums at age 12.",
+ what:"Young teens and tweens buy adult skincare such as retinol and vitamin C serums after seeing routines on TikTok. [[37]]",
+ ev:["A dermatologist at Thomas Jefferson University says products such as vitamin C and retinol are unnecessary for preteens. [[37]]",
+     "Layering many products can cause irritation, flaking, redness and inflammation. [[37]]",
+     "Gentle drugstore products are likely a better choice, and sunscreen is the most important proven product for preventing future skin damage. [[37]]",
+     "A California lawmaker proposed a ban on selling some anti aging products, including retinol, to people under 18. [[38]]"],
+ watch:"Keep your routine simple, and ask a doctor if you have acne.",
+ why:"Dermatologists see little benefit and some risk of irritation."},
+
+{id:"sunscreen",name:"Sunscreen skepticism and tanning",cat:"look",v:"risky",
+ hook:"Skip sunscreen because a video says it is harmful.",
+ what:"Posts on social media claim that sunscreen is unsafe or that a base tan protects you. The American Academy of Dermatology (AAD) surveys people each year about sun habits. [[39,40]]",
+ ev:["In the 2026 AAD survey, 52% of people believed at least one tanning myth, such as that tanning is safe if you do not burn. [[39]]",
+     "19% believed a base tan can prevent sunburn or reduce cancer risk. The AAD says any tan is a sign of UV damage. [[39]]",
+     "The president of the Skin Cancer Foundation says there is absolutely no evidence that sunscreen causes skin cancer. [[40]]",
+     "The 2025 AAD survey reported that sunburn rates rose 40% and tanning rates rose 24% since 2020. [[40]]"],
+ watch:"The AAD says at least 1 in 5 Americans will develop skin cancer in their lifetime. Use sunscreen and check your skin. [[39]]",
+ why:"The claim is false and skipping sunscreen raises skin cancer risk."},
+
+{id:"red-light",name:"Red light therapy",cat:"look",v:"mixed",
+ hook:"A glowing mask or under eye device for better skin.",
+ what:"Red light therapy devices shine red light on the skin. Newer devices sit under the eyes to target dark circles, fine lines and puffiness. [[4]]",
+ ev:["A dermatologist quoted by HealthyWomen says red light can stimulate collagen and that most regular users notice better skin quality. [[4]]",
+     "HealthyWomen rates under eye devices as a trend with substance, based on that expert view. [[4]]"],
+ watch:"Devices vary and cost money. Look for more evidence before you buy.",
+ why:"One expert is positive and the evidence in our sources is limited."},
+
+{id:"salmon-facial",name:"Salmon sperm facials",cat:"look",v:"weak",
+ hook:"A celebrity skin treatment with a surprising name.",
+ what:"The serum is made of sterilized DNA fragments extracted from salmon sperm cells. They are called polynucleotides, or PDRN. [[4]]",
+ ev:["A dermatologist says it supports skin repair and collagen, as any skincare with peptides does. [[4]]",
+     "A 2024 review found that polynucleotides helped with fine lines, elasticity and hydration. Results varied and research is limited. [[4]]",
+     "Skincare is not regulated by the US Food and Drug Administration for safety and effectiveness. [[4]]"],
+ watch:"The dermatologist's verdict is hype for now. [[4]]",
+ why:"Research is limited and the expert quoted calls it hype for now."},
+
+{id:"glp1",name:"GLP-1 weight loss drugs",cat:"tech",v:"mixed",
+ hook:"Ozempic style injections for fast weight loss.",
+ what:"GLP-1 medications were developed to treat type 2 diabetes and obesity. Online they are often shown as miracle weight loss drugs. [[43]]",
+ ev:["A 2026 study of YouTube videos and their comments found that social media intensifies fears about obesity and promotes benefits such as appetite suppression. [[41]]",
+     "The same study says algorithms may normalize off label use, which raises concerns about misinformation and public health risks. [[41]]",
+     "A University of Colorado researcher found that many websites selling compounded GLP-1 drugs claimed to be FDA approved or generic when they were not. [[42]]"],
+ watch:"These are prescription medicines. Talk with a doctor, and be careful with online sellers. [[42]]",
+ why:"Real medicines for medical conditions, surrounded by hype and risky sellers."},
+
+{id:"peptides",name:"Peptides and BPC-157",cat:"tech",v:"risky",
+ hook:"Injectable compounds for muscle, healing and youth.",
+ what:"Influencers promote injectable compounds called peptides, such as BPC-157, for recovery, muscle growth and younger looking skin. They are unapproved drugs. [[44,45]]",
+ ev:["A McMaster University researcher writes that published human evidence for BPC-157 is trivial. Feeling better after an injection can have other explanations, such as time, rehabilitation, expectation and regression to the mean. [[44]]",
+     "Health Canada warned people not to buy or inject unauthorized peptide drugs sold online. [[44]]",
+     "FDA scientists found little data on BPC-157 and raised concerns about contamination, allergic reactions and quality control. [[45]]",
+     "An FDA advisory panel voted 8 to 6 in July 2026 in favor of broader access. The vote is not binding. [[45]]"],
+ watch:"Influencers often earn money from what they promote, so check who profits. [[55]]",
+ why:"Regulators raise safety concerns and human evidence is minimal."},
+
+{id:"nicotine-pouches",name:"Nicotine pouches (Zyn)",cat:"tech",v:"risky",
+ hook:"Tiny pouches for focus and confidence.",
+ what:"Nicotine pouches are placed in the mouth. Influencers nicknamed Zynfluencers link them to confidence, masculinity and mental sharpness. [[46]]",
+ ev:["In a 2024 US survey, 5.4% of teens said they had used nicotine pouches, up from 3.0% in 2023. [[46]]",
+     "A UCSF article reports that use among youth and young adults nearly quadrupled between 2022 and 2025, according to a national study. [[47]]",
+     "A different survey, the 2025 National Youth Tobacco Survey, found 1.7% of middle and high school students used pouches. About 90% of users chose flavored pouches. [[48]]",
+     "Experts told PBS that nicotine exposure increases nicotine receptors in the brain, so people begin to need nicotine just to feel normal. [[48]]",
+     "The FDA authorized Zyn for adults 21 and older. The pouches are not approved as a way to quit smoking. [[46,48]]",
+     "A 2026 study of Zyn posts on Instagram and TikTok concluded that the content may appeal to youth. [[56]]"],
+ watch:"The surveys measured different things, so the numbers differ. Both show that teens use these products. [[46,48]]",
+ why:"Nicotine is addictive and the sources show growing use among young people."},
+
+{id:"cgm",name:"Glucose monitors for healthy people",cat:"tech",v:"weak",
+ hook:"Wear a sensor to see how food changes your blood sugar.",
+ what:"Continuous glucose monitors are small patches that track blood sugar all day. They are lifesaving for people with diabetes and have become popular with people without it. [[49]]",
+ ev:["An AP report says there is scant evidence that the monitors are useful for people with normal blood sugar. [[49]]",
+     "Healthy bodies regulate glucose well after meals. Monitors may lead people to misread normal swings after eating or activity. [[49]]",
+     "Even experts do not agree on how to interpret the data for people without diabetes. [[49]]"],
+ watch:"Misreading normal swings is a known problem, according to the AP report. [[49]]",
+ why:"The AP report finds little evidence of benefit for healthy people."},
+
+{id:"ai-chatbots",name:"AI chatbots for health advice",cat:"tech",v:"mixed",
+ hook:"Ask a chatbot about symptoms, stress or feelings.",
+ what:"Many teens ask AI chatbots for health and mental health advice. A study in JAMA Pediatrics, published online in June 2026, surveyed US young people aged 12 to 21. [[50]]",
+ ev:["19.2% of US adolescents used AI chatbots for mental health advice in 2025, up from 13.1% in 2024. [[50]]",
+     "91.7% of users rated the advice helpful, and 63.3% had told no one about using it. [[50]]",
+     "The researchers say the privacy that attracts teens also carries risk if they do not tell a health professional or trusted adult. [[50]]",
+     "A pediatric psychologist told WPLG that newer chatbots are more unpredictable and more engaging, which increases risk. [[51]]",
+     "A report on PhillyVoice says general purpose chatbots can give inaccurate or misleading advice with high confidence. [[52]]"],
+ watch:"Treat a chatbot as a starting point and check health claims with a doctor, a nurse or an official health site.",
+ why:"Many teens find it helpful. The risks come from errors and secrecy."}
+];
+var TMAP = {};
+T.forEach(function(t){TMAP[t.id]=t;});
+
+function idsIn(text){
+  var out=[],re=/\[\[([\d,\s]+)\]\]/g,m;
+  while((m=re.exec(text))){m[1].split(",").forEach(function(x){x=parseInt(x,10);if(x&&out.indexOf(x)<0)out.push(x);});}
+  return out;
+}
+T.forEach(function(t){
+  var all=[t.what].concat(t.ev,[t.watch]).join(" ");
+  t.src=idsIn(all).sort(function(a,b){return a-b;});
+});
+
+/* ---------- pitfalls ---------- */
+var PIT = [
+{g:"Who is giving the advice",items:[
+ {h:"The person talking may not be an expert",p:"About half of US adults under 50 get health information from social media influencers and podcasts. Only 17% of the influencers Pew studied described themselves as doctors, dentists or nurses. [[53,57]] Harvard Health advises checking any therapy, supplement or workout with a doctor, dietitian, physical therapist or pharmacist before you try it. [[54]]",seen:["peptides","protein","creatine"]},
+ {h:"Someone may be earning money from your click",p:"Many health influencers earn money from what they post. A researcher quoted by the AP says financial incentives are a reason to take such information with a grain of salt. [[55]] Brands also make health claims that get challenged. A lawsuit claimed one prebiotic soda had far too little fiber to deliver its advertised gut benefits. [[12]]",seen:["prebiotic-soda","electrolytes","peptides"]},
+ {h:"One story is not a study",p:"Harvard Health says influencers' personal stories are anecdotal and should never replace medical advice. [[54]] A McMaster University researcher explains why a personal result can mislead. Feeling better two weeks after an injection could come from time, rehabilitation, expectation or regression to the mean. [[44]] Regression to the mean means that a very bad day is often followed by a better one by chance.",seen:["peptides","cold-sauna"]}
+]},
+{g:"What the evidence can and cannot show",items:[
+ {h:"Small studies get big claims",p:"The 2025 mouth taping review could find only 10 studies. [[19]] Harvard Health calls the evidence for cold plunge benefits thin. [[26]] A McMaster researcher says published human evidence for BPC-157 is trivial, and FDA staff described five BPC-157 studies as short, small and exploratory. [[44,45]]",seen:["mouth-taping","cold-sauna","peptides"]},
+ {h:"Myths travel faster than corrections",p:"In the 2026 AAD survey, 52% of people believed at least one tanning myth. [[39]] Searches for raw milk hit an all time high in early 2025, while a 2025 review found well established risks and no proven health benefits. [[11]]",seen:["sunscreen","raw-milk"]}
+]},
+{g:"What can happen to your body",items:[
+ {h:"Advice for adults meets a teenage body",p:"Experts recommend that teens have no more than 100 mg of caffeine a day, and common energy drinks contain two to three times that. [[14]] A Fortune report says teens' developing bodies are more vulnerable to extreme heat and cold. [[28]] Dermatologists say adult anti aging products can irritate young skin. [[37]] Nicotine exposure changes the brain so that people begin to need nicotine just to feel normal. [[48]]",seen:["energy-drinks","cold-sauna","sephora-kids","nicotine-pouches","creatine"]},
+ {h:"The product may not be what the ad says",p:"Many websites selling compounded GLP-1 drugs claimed to be FDA approved or generic when they were not. [[42]] FDA scientists raised concerns about contamination, allergic reactions and quality control for BPC-157 products. [[45]] In the US, skincare is not regulated by the FDA for safety and effectiveness. [[4]]",seen:["glp1","peptides","salmon-facial"]}
+]},
+{g:"What can happen to your mind and your choices",items:[
+ {h:"Tracking turns into worry",p:"Focusing too much on perfect sleep is called orthosomnia, and it can make sleep worse. [[16,17]] Glucose monitors can lead people to misread normal blood sugar swings after eating. [[49]]",seen:["sleepmaxxing","cgm"]},
+ {h:"Appearance trends change how you see yourself",p:"Nationwide Children's Hospital says looksmaxxing sends the message that appearance equals worth, which can lead to anxiety, shame and a distorted body image. [[33]] Austrian psychologists warn that SkinnyTok content can lead to obsessive calorie counting and eating disorders. [[36]] Some experts link the protein craze to orthorexia, an unhealthy obsession with eating healthy. [[7]]",seen:["looksmaxxing","skinnytok","protein"]},
+ {h:"A trend can delay real help",p:"Mouth breathing at night can be a sign of obstructive sleep apnea, so doctors advise finding the cause before taping. [[18]] A bed rotting habit that leaves you no more refreshed the next day is a warning sign. [[22]] In a JAMA Pediatrics study, 63.3% of teens who asked chatbots for mental health advice had told no one. [[50]]",seen:["mouth-taping","bed-rotting","ai-chatbots"]}
+]}
+];
+
+var CHECKS = [
+ {b:"Who is talking, and what do they gain?",t:"Look for real training. Check whether they sell the product or earn money from links. [[54,55]]"},
+ {b:"Is it a study or a story?",t:"Personal results are anecdotes. Look for research and for what independent experts say. [[54]]"},
+ {b:"What do hospitals, universities or health agencies say?",t:"Search the trend name together with the word evidence. Compare at least two reliable sources."},
+ {b:"Is it safe for my age and body?",t:"Limits for adults can be too high for teens. Caffeine is one example. [[15]]"},
+ {b:"Does it make me feel better or worse about my body?",t:"If a trend creates pressure or shame, that is a reason to step away from it."},
+ {b:"Who would I tell if something went wrong?",t:"Name one adult before you start. A doctor, a parent or the school health nurse can all help."}
+];
+
+/* ---------- helpers ---------- */
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+function fmt(s){
+  return s.replace(/\s*\[\[([\d,\s]+)\]\]/g,function(m,ids){
+    var links=ids.split(",").map(function(x){return parseInt(x,10);}).filter(Boolean).map(function(id){
+      var sr=SRCMAP[id];
+      return '<a class="ref" href="#/sources/'+id+'" title="'+esc(sr?sr.t:"Source")+'" aria-label="Source '+id+'">'+id+'</a>';
+    }).join("");
+    return '<sup class="refs">'+links+'</sup>';
+  });
+}
+function stamp(v,big){
+  return '<span class="stamp v-'+v+(big?' big':'')+'">'+ICON[v]+VERD[v].label+'</span>';
+}
+function plain(s){return s.replace(/\s*\[\[[\d,\s]+\]\]/g,"");}
+
+var app=document.getElementById("app");
+var dlg=document.getElementById("dlg");
+var view="";
+var state={cat:"all",v:"all",q:""};
+var lastFocus=null;
+
+/* ---------- views ---------- */
+function renderHome(){
+  var legend=VORDER.slice().reverse().map(function(v){
+    return '<li><span class="stamp v-'+v+'">'+ICON[v]+VERD[v].label+'</span><span>'+VERD[v].desc+'</span></li>';
+  }).join("");
+  var catChips='<button class="chip" type="button" data-cat="all" aria-pressed="true">All 30</button>'+
+    Object.keys(CATS).map(function(k){
+      return '<button class="chip" type="button" data-cat="'+k+'" aria-pressed="false" style="--dot:'+CATS[k].color+'"><span class="dot" aria-hidden="true"></span>'+CATS[k].label+'</button>';
+    }).join("");
+  var vChips='<button class="chip" type="button" data-v="all" aria-pressed="true">Any verdict</button>'+
+    VORDER.slice().reverse().map(function(v){return '<button class="chip" type="button" data-v="'+v+'" aria-pressed="false">'+VERD[v].label+'</button>';}).join("");
+  app.innerHTML=
+  '<div class="wrap">'+
+  '<section class="hero" aria-labelledby="h1"><div class="hero-grid"><div>'+
+    '<h1 id="h1">30 health trends from your feed. What do the <em>experts</em> say?</h1>'+
+    '<p class="lead">Fibermaxxing, mouth taping, energy drinks, peptides and 26 more. Each trend is checked against sources from 2024 to 2026, such as hospitals, universities, medical journals and news reports that quote experts.</p>'+
+    '<div class="btnrow"><a class="btn primary" href="#grid" data-jump="grid">Browse the 30 trends</a><a class="btn ghost" href="#/pitfalls">See the pitfalls</a><a class="btn ghost" href="#/sources">All sources</a></div>'+
+  '</div>'+
+  '<aside class="legend" aria-labelledby="lg"><h2 id="lg">How to read a verdict</h2><ul>'+legend+'</ul></aside></div></section>'+
+  '<section class="why" aria-label="Why this matters"><p><strong>Why check?</strong> About half of US adults under 50 get health information from social media influencers and podcasts. Only 17% of the influencers Pew studied described themselves as doctors, dentists or nurses. <a href="#/pitfalls">Read what can go wrong</a>.<sup class="refs"><a class="ref" href="#/sources/53" title="Pew Research Center">53</a><a class="ref" href="#/sources/57" title="PhillyVoice report on the Pew study">57</a></sup></p></section>'+
+  '<section id="grid" aria-label="The 30 trends">'+
+    '<div class="controls">'+
+      '<div class="ctl-row" role="group" aria-label="Filter by topic"><span class="ctl-label">Topic</span>'+catChips+'</div>'+
+      '<div class="ctl-row" role="group" aria-label="Filter by verdict"><span class="ctl-label">Verdict</span>'+vChips+'</div>'+
+      '<div class="ctl-row"><label class="ctl-label" for="q">Search</label><input class="search" id="q" type="search" placeholder="Try sleep, skin or caffeine" autocomplete="off"><p class="count" id="count" aria-live="polite"></p></div>'+
+    '</div>'+
+    '<ul class="grid" id="cards"></ul>'+
+  '</section></div>';
+  app.querySelectorAll("[data-cat]").forEach(function(b){b.addEventListener("click",function(){state.cat=b.getAttribute("data-cat");syncChips();renderCards();});});
+  app.querySelectorAll("[data-v]").forEach(function(b){b.addEventListener("click",function(){state.v=b.getAttribute("data-v");syncChips();renderCards();});});
+  var q=document.getElementById("q");
+  q.value=state.q;
+  q.addEventListener("input",function(){state.q=q.value;renderCards();});
+  var jump=app.querySelector("[data-jump]");
+  jump.addEventListener("click",function(e){e.preventDefault();document.getElementById("grid").scrollIntoView({behavior:"smooth",block:"start"});});
+  syncChips();renderCards();
+}
+function syncChips(){
+  app.querySelectorAll("[data-cat]").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-cat")===state.cat));});
+  app.querySelectorAll("[data-v]").forEach(function(b){b.setAttribute("aria-pressed",String(b.getAttribute("data-v")===state.v));});
+}
+function renderCards(){
+  var q=state.q.trim().toLowerCase();
+  var list=T.filter(function(t){
+    if(state.cat!=="all"&&t.cat!==state.cat)return false;
+    if(state.v!=="all"&&t.v!==state.v)return false;
+    if(q){var hay=(t.name+" "+t.hook+" "+plain(t.what)+" "+CATS[t.cat].label).toLowerCase();if(hay.indexOf(q)<0)return false;}
+    return true;
+  });
+  var ul=document.getElementById("cards");
+  ul.innerHTML=list.map(function(t){
+    return '<li class="cell" style="--cat:'+CATS[t.cat].color+'"><a class="card" href="#/trend/'+t.id+'">'+
+      '<span class="card-top"><span class="cat-label">'+CATS[t.cat].label+'</span>'+stamp(t.v)+'</span>'+
+      '<span class="card-name">'+esc(t.name)+'</span>'+
+      '<span class="card-hook">'+esc(t.hook)+'</span>'+
+      '<span class="card-foot">'+t.src.length+(t.src.length===1?' source':' sources')+', tap for the full check</span></a>'+
+      '<div class="peek" aria-hidden="true">'+
+        '<span class="peek-name">'+esc(t.name)+'</span>'+
+        '<span class="peek-h">What it is</span><span class="peek-t">'+esc(plain(t.what))+'</span>'+
+        '<span class="peek-h">Our verdict</span><span class="peek-v">'+stamp(t.v)+'</span><span class="peek-t">'+esc(t.why)+'</span>'+
+        '<span class="peek-go">Click for the full check</span>'+
+      '</div></li>';
+  }).join("");
+  if(!list.length)ul.innerHTML='<li class="empty">No trend matches. Try a different filter or search word.</li>';
+  document.getElementById("count").textContent="Showing "+list.length+" of "+T.length;
+}
+
+function renderPitfalls(){
+  var groups=PIT.map(function(g){
+    var items=g.items.map(function(it){
+      var seen=it.seen.map(function(id){return '<a href="#/trend/'+id+'">'+esc(TMAP[id].name)+'</a>';}).join("");
+      return '<article class="pitem"><h3>'+esc(it.h)+'</h3><p>'+fmt(it.p)+'</p><p class="seenin">Seen in: '+seen+'</p></article>';
+    }).join("");
+    return '<section class="pgroup"><h2>'+esc(g.g)+'</h2><div class="pitems">'+items+'</div></section>';
+  }).join("");
+  var table=VORDER.map(function(v){
+    var rows=T.filter(function(t){return t.v===v;}).map(function(t){
+      return '<div class="row"><div class="nm"><a href="#/trend/'+t.id+'">'+esc(t.name)+'</a></div><div>'+stamp(t.v)+'</div><p>'+fmt(t.watch)+'</p></div>';
+    }).join("");
+    return '<h3 class="vh">'+VERD[v].label+' ('+T.filter(function(t){return t.v===v;}).length+' trends)</h3>'+rows;
+  }).join("");
+  var checks=CHECKS.map(function(c){return '<li><div><b>'+esc(c.b)+'</b>'+fmt(c.t)+'</div></li>';}).join("");
+  app.innerHTML='<div class="wrap page">'+
+    '<h1>When trend advice goes wrong</h1>'+
+    '<p class="lead">Many trends start with a real wish, such as better sleep, more energy or clearer skin. The problems start when the advice is untested, sold to you or too extreme for a teenage body. This page explains the most common pitfalls and shows the main risk for each of the 30 trends.</p>'+
+    groups+
+    '<section class="pgroup"><h2>Trend by trend: the main pitfall</h2><div class="rows">'+table+'</div></section>'+
+    '<section class="pgroup"><h2>Six questions to ask before you try a trend</h2><p class="fine" style="margin-top:0">This checklist is adapted from the advice in Harvard Health and the AP report, and from the patterns in the sources on this site.</p><ol class="checks">'+checks+'</ol></section>'+
+    '<section class="callout" aria-labelledby="cw"><h2 id="cw">If something goes wrong</h2><p>Stop the trend. Tell a parent or another adult you trust. Talk to a doctor or to the school health nurse. In a medical emergency in Norway, call 113.</p></section>'+
+  '</div>';
+}
+
+function renderSources(focusId){
+  var groups=[{label:"Pitfalls and general advice",ids:[53,54,55,57]}];
+  Object.keys(CATS).forEach(function(k){
+    var ids=[];
+    T.filter(function(t){return t.cat===k;}).forEach(function(t){t.src.forEach(function(i){if(ids.indexOf(i)<0)ids.push(i);});});
+    groups.push({label:CATS[k].label,ids:ids});
+  });
+  var shown={};
+  groups.forEach(function(g){g.ids=g.ids.filter(function(i){if(shown[i])return false;shown[i]=1;return true;});});
+  var usedBy={};
+  T.forEach(function(t){t.src.forEach(function(i){(usedBy[i]=usedBy[i]||[]).push(t);});});
+  PIT.forEach(function(g){g.items.forEach(function(it){idsIn(it.p).forEach(function(i){usedBy[i]=usedBy[i]||[];});});});
+  var html=groups.map(function(g){
+    var items=g.ids.slice().sort(function(a,b){return a-b;}).map(function(id){
+      var s=SRCMAP[id];
+      var uses=(usedBy[id]||[]).map(function(t){return '<a href="#/trend/'+t.id+'">'+esc(t.name)+'</a>';}).join("");
+      var date=s.d?esc(s.d):'date not shown';
+      return '<li class="src" id="src-'+id+'"><span class="n">'+id+'</span><div>'+
+        '<div class="t"><a href="'+esc(s.u)+'" target="_blank" rel="noopener noreferrer">'+esc(s.t)+'</a></div>'+
+        '<div class="m">'+esc(s.o)+', '+date+(s.d?'':'<span class="nd">check the date yourself</span>')+'</div>'+
+        (uses?'<p class="u">Used for: '+uses+'</p>':'')+'</div></li>';
+    }).join("");
+    return '<section class="srcgroup"><h2>'+esc(g.label)+'</h2><ol class="srclist" style="list-style:none;padding:0">'+items+'</ol></section>';
+  }).join("");
+  app.innerHTML='<div class="wrap page">'+
+    '<h1>Sources</h1>'+
+    '<p class="lead">Every number and expert statement on this site comes from one of the '+SRC.length+' pages below. The small numbers in the text link here. The summaries use our own words.</p>'+
+    '<section class="method" aria-labelledby="mh"><h2 id="mh" style="margin-top:16px">How the 30 trends were chosen, and the limits</h2><ul>'+
+      '<li>No official ranking of the most popular health trends exists. These 30 appeared often in 2024 to 2026 coverage from hospitals, universities, health agencies and news outlets, and they matter to teenagers.</li>'+
+      '<li>Almost every trend has at least one source with a confirmed publication date in 2024 or later. A few pages do not show a date. They are marked, and you should check them yourself before you rely on them.</li>'+
+      '<li>Most sources come from the United States. A few come from Canada, Australia, Austria, the United Kingdom and Norway. Rules, products and numbers can differ in Norway.</li>'+
+      '<li>Some entries rest on one article. They say so in the text.</li>'+
+      '<li>Verdicts are a plain language reading of the sources. They are not medical advice, and experts can disagree.</li>'+
+      '<li>Web pages change. Sources were last checked on 7 October 2026.</li>'+
+    '</ul></section>'+
+    html+'</div>';
+  if(focusId){
+    var el=document.getElementById("src-"+focusId);
+    if(el){el.classList.add("hl");el.scrollIntoView({block:"center"});}
+  }
+}
+
+/* ---------- dialog ---------- */
+function openTrend(id){
+  var t=TMAP[id];
+  if(!t){go("/");return;}
+  var seen=t.hook;
+  var ev=t.ev.map(function(e){return '<li>'+fmt(e)+'</li>';}).join("");
+  dlg.style.setProperty("--cat",CATS[t.cat].color);
+  dlg.innerHTML='<div class="dlg-band"></div><div class="dlg-in">'+
+    '<div class="dlg-head"><div><p class="dlg-cat">'+CATS[t.cat].label+'</p></div><button class="close" type="button" id="dlgClose">Close</button></div>'+
+    '<h2 id="dlgTitle">'+esc(t.name)+'</h2>'+
+    '<p>'+stamp(t.v,true)+'</p>'+
+    '<p class="seen"><span>What you see online</span>'+esc(seen)+'</p>'+
+    '<h3>What it is</h3><p>'+fmt(t.what)+'</p>'+
+    '<h3>What the sources say</h3><ul>'+ev+'</ul>'+
+    '<h3>Watch out for</h3><div class="watch"><p style="margin:0">'+fmt(t.watch)+'</p></div>'+
+    '<h3>Why this verdict</h3><p>'+esc(t.why)+'</p>'+
+    '<p class="fine">The verdict is our reading of the cited sources and is not medical advice. Numbers beside the text link to the sources page.</p>'+
+  '</div>';
+  document.getElementById("dlgClose").addEventListener("click",function(){dlg.close();});
+  document.title=t.name+" | Hype Check";
+  if(!dlg.open){lastFocus=document.activeElement;dlg.showModal();}
+  dlg.scrollTop=0;
+}
+dlg.addEventListener("close",function(){
+  if(cur.indexOf("/trend/")===0){
+    cur="/";
+    try{history.replaceState(null,"","#/");}catch(e){}
+    document.title="Hype Check: 30 health trends from your feed";
+    if(lastFocus&&lastFocus.focus)try{lastFocus.focus();}catch(e){}
+  }
+});
+dlg.addEventListener("click",function(e){
+  if(e.target===dlg)dlg.close();
+  var a=e.target.closest&&e.target.closest("a.ref");
+  if(a){/* navigation handled by hashchange; dialog closes there */}
+});
+
+/* ---------- router ---------- */
+var cur="";
+function setNav(name){
+  document.querySelectorAll("[data-nav]").forEach(function(a){
+    if(a.getAttribute("data-nav")===name)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current");
+  });
+}
+function render(path){
+  path=(path||"/").replace(/^#/,"");
+  if(path.charAt(0)!=="/")path="/"+path;
+  cur=path;
+  var parts=path.slice(1).split("/");
+  var name=parts[0]||"home";
+  if(name==="trend"){
+    if(view!=="home"){renderHome();view="home";setNav("home");}
+    openTrend(parts[1]);
+    return;
+  }
+  if(dlg.open){dlg.close();}
+  if(name==="pitfalls"){renderPitfalls();view="pitfalls";setNav("pitfalls");document.title="Pitfalls | Hype Check";window.scrollTo(0,0);}
+  else if(name==="sources"){renderSources(parts[1]);view="sources";setNav("sources");document.title="Sources | Hype Check";if(!parts[1])window.scrollTo(0,0);}
+  else{
+    if(view!=="home"){renderHome();view="home";window.scrollTo(0,0);}
+    setNav("home");document.title="Hype Check: 30 health trends from your feed";
+  }
+}
+function go(path){
+  try{history.pushState(null,"","#"+path);}catch(e){}
+  render(path);
+}
+document.addEventListener("click",function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="#/"]');
+  if(!a)return;
+  if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1)return;
+  e.preventDefault();
+  go(a.getAttribute("href").slice(1));
+});
+function fromHash(){
+  var h=location.hash.replace(/^#/,"");
+  if(h===cur)return;
+  render(h||"/");
+}
+window.addEventListener("hashchange",fromHash);
+window.addEventListener("popstate",fromHash);
+
+/* ---------- theme ---------- */
+var btn=document.getElementById("themeBtn");
+function currentTheme(){
+  var set=document.documentElement.getAttribute("data-theme");
+  if(set)return set;
+  return window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";
+}
+function syncBtn(){btn.setAttribute("aria-pressed",String(currentTheme()==="dark"));}
+btn.addEventListener("click",function(){
+  var next=currentTheme()==="dark"?"light":"dark";
+  document.documentElement.setAttribute("data-theme",next);
+  try{localStorage.setItem("hc-theme",next);}catch(e){}
+  syncBtn();
+});
+try{var saved=localStorage.getItem("hc-theme");if(saved==="dark"||saved==="light")document.documentElement.setAttribute("data-theme",saved);}catch(e){}
+syncBtn();
+
+render(location.hash.replace(/^#/,"")||"/");
+})();
+</script>
+</body>
+</html>
